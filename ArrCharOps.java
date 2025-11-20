@@ -36,15 +36,18 @@ public class ArrCharOps {
     /** Returns the char value at the specified index. Assume that the array is non-empty.
      */
     public static char charAt(char[] arr, int index) {
-        // Replace the following statement with your code
-        return 0;
+        return  arr[index] ;
     }
 
     /** If the two arrays have the same value in every index, 
      *  returns true; Otherwise returns false.
      */
     public static boolean equals(char[] arr1, char[] arr2) {
-        // Replace the following statement with your code
+        for(int i=0;i<arr1.length;i++){
+            if (arr1[i]==arr2[i]) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -67,15 +70,27 @@ public class ArrCharOps {
      *  If no such character is found, returns -1.
      */
     public static int lastIndexOf(char[] arr, char ch) {
-        // Replace the following statement with your code
+        for(int i=arr.length -1;i>=0;i--){
+            if(arr[i]==ch){
+                return i;
+            }
+        }
         return -1;
     }
 
     /* Returns an array which is the concatanation of the two given arrays.
     */
     public static char[] concat(char[] arr1, char[] arr2) {
-        // Replace the following statement with your code
-        return null;
+        char [] newArry = new char[arr1.length+arr2.length];
+        for(int i=0;i<arr1.length;i++){
+            newArry[i] = arr1[i];
+        }
+        int index =arr1.length;
+        for(int j=0;j<arr2.length;j++){
+            newArry[index] =arr2[j];
+            index = index +1;
+        }
+        return newArry;
     }
 
     /** Returns a new array that can be described as a sub-array of this array.
@@ -126,7 +141,20 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        // Replace the following statement with your code
+        int minLen;
+        if (str1.length()<str2.length()) {
+            minLen = str1.length();
+        }else{
+            minLen = str2.length();
+        }
+            for(int i=0;i<minLen;i++){
+                if (str1.charAt(i)< str2.charAt(i)) {
+                    return -1;                    
+                }
+                if (str1.charAt(i)>str2.charAt(i)) {
+                    return 1;
+                }
+            }
         return 0;
     }
 }
