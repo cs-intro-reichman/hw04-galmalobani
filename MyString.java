@@ -5,7 +5,6 @@ public class MyString {
         System.out.println("This costs 15 Sheksls : " + lowerCase("This costs 15 Sheksls"));
         System.out.println("TLV : " + lowerCase("TLV"));
         System.out.println("lowercase : " + lowerCase("lowercase"));
-
         System.out.println("Testing contains:");
         System.out.println(contains("unhappy", "happy")); // true
         System.out.println(contains("happy", "unhappy")); // false
