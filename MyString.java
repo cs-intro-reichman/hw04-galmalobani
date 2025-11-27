@@ -22,10 +22,11 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        str1 = lowerCase(str1);
-        str2 = lowerCase(str2);
         if(str1.length()<str2.length()){
             return false;
+        }
+        if (str2.length() == 0) {
+        return true;
         }
         for(int i = 0;i<=str1.length()-str2.length();i++){
             boolean match = true;
