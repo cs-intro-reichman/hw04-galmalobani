@@ -48,14 +48,14 @@ public class ArrCharOps {
         }
         if (arr1 == null || arr2 == null){
             return false;
-        } else{
-            for(int i=0;i<arr1.length;i++){
-            if (arr1[i]==arr2[i]) {
-                return true;
+        } 
+        for(int i=0;i<arr1.length;i++){
+            if (arr1[i]!=arr2[i]) {
+                return false;
             }
         }
-        return false;
-        }
+        return true;
+        
     }
 
     /** Returns the index within the given array of the first occurrence of the given character.
@@ -106,8 +106,17 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        // Replace the following statement with your code
-        return null;
+        if (arr == null){
+             return null;
+        } 
+        if (beginIndex < 0 || endIndex > arr.length || beginIndex > endIndex) {
+        return null; 
+       }
+        char[] sub = new char[endIndex - beginIndex];
+        for (int i = 0; i < sub.length; i++) {
+        sub[i] = arr[beginIndex + i]; // שים לב לחיבור ה-start
+    }
+        return sub;
     }
 
      /** Returns a single integer that represents the given array. This integer is sometimes 
@@ -118,8 +127,12 @@ public class ArrCharOps {
      *  The hash value of an empty array is zero.
      */
     public static long hashCode(char[] arr) {
-        // Replace the following statement with your code
-        return 0;
+        if (arr == null) return 0;
+        int hash = 0;
+        for (int i = 0; i < arr.length; i++) {
+            hash = 31 * hash + arr[i];
+        }
+        return hash;
     }
 
     /**
