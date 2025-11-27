@@ -62,15 +62,23 @@ public class ArrCharOps {
      *  If no such character is found, returns -1.
      */
     public static int indexOf(char[] arr, char ch) {
-        // Replace the following statement with your code
-        return -1;
+        return indexOf(arr, ch, 0);
     }
 
     /** Same as indexOf(char[], char), but starts the search in the given index.
      */
     public static int indexOf(char[] arr, char ch, int fromIndex) {
-        // Replace the following statement with your code
+        if (arr == null) return -1;
+        if (fromIndex < 0) fromIndex = 0;
+        if (fromIndex >= arr.length) 
+            return -1;
+        for (int i = fromIndex; i < arr.length; i++) {
+            if (arr[i] == ch) {
+                return i;
+            }
+        }
         return -1;
+       
     }
 
     /** Returns the index within the given arr of the last occurrence of the given character.
@@ -130,7 +138,7 @@ public class ArrCharOps {
         if (arr == null) return 0;
         int hash = 0;
         for (int i = 0; i < arr.length; i++) {
-            hash = 31 * hash + arr[i];
+            hash = 7 * hash + arr[i];
         }
         return hash;
     }
@@ -175,6 +183,6 @@ public class ArrCharOps {
                     return 1;
                 }
             }
-        return 0;
+        return str1.length() - str2.length();
     }
 }
